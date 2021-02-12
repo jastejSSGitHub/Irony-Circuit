@@ -83,6 +83,8 @@
   text-align: center;
   border-style: none;
   margin-top: 35px;
+  margin-bottom: 70px;
+  padding-left: 0px;
   cursor: pointer;
 }
 .buttonCTA button:hover {
@@ -161,6 +163,9 @@
   justify-content: center;
   width: 300px;
 }
+
+.card {
+}
 .card__image {
   display: flex;
   justify-content: center;
@@ -168,6 +173,13 @@
 .card img {
   width: 60px;
   vertical-align: center;
+}
+.card img:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  overflow-y: hidden;
 }
 .card h2 {
   display: flex;
@@ -204,6 +216,7 @@
 
 .browse {
   margin: 60px;
+  margin-top: 120px;
 }
 .browse .title {
   display: flex;
@@ -216,13 +229,21 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  overflow-y: hidden;
 }
 .gameContainer ul {
   display: flex;
   flex-direction: row;
   list-style: none;
+  overflow-y: hidden;
 }
-
+.gameContainer ul li:hover {
+  transform: scale(1.03);
+  transition: ease-in-out 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  overflow-y: hidden;
+}
 .title h1 {
   font-family: Avenir Next LT Pro;
   font-style: normal;
@@ -240,6 +261,45 @@
   cursor: pointer;
 }
 
+#moreTournaments:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.5s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  overflow-y: hidden;
+}
 
+.playContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 100px 13em 0 13em;
+}
 
+.container__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 100px;
+}
 
+.container__rightTop h1 {
+  font-family: Avenir Next LT Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  color: #234257;
+}
+.container__rightBottom {
+  display: flex;
+  justify-content: center;
+}
+.container__rightBottom .buttonCTA button {
+  margin: 20px;
+}
+
+@media screen and (min-width: 1900px) {
+  .playContainer {
+    margin: 100px 22em 0 22em;
+  }
+}

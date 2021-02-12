@@ -8,12 +8,14 @@ import { Button } from '@material-ui/core';
 import Tournaments from './Tournaments'
 import HowItWorks from './HowItWorks'
 import Lobby from './Lobby'
+import ScrollToTop from './ScrollToTop'
 
 
 function NavBar() {
     return (
             
         <Router>
+            <ScrollToTop />
             <div className="navBar">
                 <div className="navContainer">
                     <div className="nav">
