@@ -11,7 +11,7 @@ function Footer() {
     return (
         <div className="footer">
                 <div className="rectangleBackground">
-                    
+                
                     <div className="flexContainer">
                     
                         <div className="row">
@@ -42,7 +42,10 @@ function Footer() {
                                     <li>Terms of Service</li>
                                 </ul>
                         </div>
+                        
                     </div>
+                    
+                    
             </div> 
                     
         </div>

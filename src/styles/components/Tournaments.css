@@ -18,20 +18,32 @@
 .carouselContainer {
   margin-left: 300px;
   margin-right: 300px;
+  overflow-y: hidden;
 }
+
 .react-multi-carousel-item img {
   width: 70%;
   cursor: pointer;
+  overflow-y: hidden;
+}
+.react-multi-carousel-list {
+  padding-top: 30px;
 }
 
 .react-multi-carousel-item img:hover {
   transform: scale(1.05);
+  overflow-y: hidden;
+}
+
+#noScroll,
+#noScrollFreeFire {
+  overflow-y: hidden;
 }
 
 .button1GA button {
   width: 89px;
   height: 36px;
-  filter: drop-shadow(0px 9px 23px rgba(24, 169, 200, 0.46));
+  filter: drop-shadow(0px 9px 13px rgba(24, 169, 200, 0.46));
   color: rgb(255, 209, 57);
   font-family: Avenir Next LT Pro !important;
   font-style: normal;
@@ -44,12 +56,16 @@
   cursor: pointer;
   margin-right: 30px;
   border-style: none;
+  margin-bottom: 40px;
+  margin-top: 5px;
+  margin-left: 20px;
+  padding-bottom: 10px;
 }
 
 .button2Free button {
   width: 89px;
   height: 36px;
-  filter: drop-shadow(0px 9px 23px rgba(24, 169, 200, 0.46));
+  filter: drop-shadow(0px 9px 13px rgba(24, 169, 200, 0.46));
   color: rgb(170, 255, 121);
   font-family: Avenir Next LT Pro !important;
   font-style: normal;
@@ -61,6 +77,9 @@
   box-shadow: 4px 7px 11px rgba(0, 0, 0, 0.14);
   cursor: pointer;
   border-style: none;
+  margin-bottom: 30px;
+  margin-top: 7px;
+  margin-left: 20px;
 }
 
 .button2Free button:hover {
@@ -85,15 +104,17 @@
 .mainContent {
   margin: 50px 100px 0 100px;
 }
-.options {
-}
 
+.carousel img {
+  filter: grayscale(100%);
+}
 .options__left {
   display: flex;
   flex-direction: row;
   justify-content: center;
   position: absolute;
 }
+
 .option__center a:hover {
   color: black !important;
 }
@@ -133,6 +154,15 @@ hr {
 .flexRow img {
   padding: 0 0px 0 0px;
   width: 85%;
+  filter: grayscale(100%);
+}
+
+#noScrollFreeFire img {
+  filter: none;
+}
+
+#game1 img {
+  filter: none;
 }
 
 .flexRow2 {
@@ -150,6 +180,8 @@ hr {
   display: flex;
   justify-content: center;
   margin: 40px;
+  padding-top: 30px;
+  padding-bottom: 80px;
 }
 
 .loadmoreButton button {
@@ -177,4 +209,8 @@ hr {
   filter: drop-shadow(0px 9px 23px rgba(24, 169, 200, 0.46));
   border-style: none;
   border-color: #cecece;
+}
+
+.footer {
+  margin-top: 100px;
 }

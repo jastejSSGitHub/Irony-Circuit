@@ -21,7 +21,7 @@ function TournamentCardHover({gameTitle, startDate, endDate, numberOfGamers, pri
                             <h2>{numberOfGamers}</h2>
                         </div>
                         <div className="InfoBox__bottom__right">
-                            <h4>Reward: $</h4>
+                            <h4>Reward: INR</h4>
                             <h3>{prizeAmount}</h3>
                         </div>
                     </div>

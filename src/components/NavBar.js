@@ -9,13 +9,12 @@ import Tournaments from './Tournaments'
 import HowItWorks from './HowItWorks'
 import Lobby from './Lobby'
 import ScrollToTop from './ScrollToTop'
+import FreeFire from './FreeFire'
 
 
 function NavBar() {
     return (
             
-        <Router>
-            <ScrollToTop />
             <div className="navBar">
                 <div className="navContainer">
                     <div className="nav">
@@ -32,9 +31,7 @@ function NavBar() {
                             <NavLink exact  className="notSelected" to="/Tournaments" activeClassName="selected">
                                 Tournaments
                             </NavLink>
-                            <NavLink exact  className="notSelected" to="/HowItWorks" activeClassName="selected">
-                                How It Works
-                            </NavLink>
+                            
                            
                         </div>
                         
@@ -51,18 +48,7 @@ function NavBar() {
                 </div>
             </div>
 
-                <Switch>
-                    <Route exact path="/">
-                        <Lobby/>
-                    </Route>
-                    <Route exact path="/Tournaments" component={Tournaments}>
-                        <Tournaments />
-                    </Route>
-                    <Route exact path="/HowItWorks" component={HowItWorks}>
-                        <HowItWorks/>
-                    </Route>
-                </Switch>
-            </Router>
+    
     )
 }
 

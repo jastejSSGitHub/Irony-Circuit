@@ -3,7 +3,7 @@ import NavBar from './NavBar';
 import '../styles/components/Tournaments.css' //CSS file of this component
 import Carousel from 'react-multi-carousel'; //top carousel 
 import 'react-multi-carousel/lib/styles.css';
-import { NavLink } from 'react-router-dom'; 
+import { Link, NavLink } from 'react-router-dom'; 
 import TournamentItem from './TournamentItem';
 import TournamentCardHover from './TournamentCardHover'; //component that gets rendered on hovering on tournament card compnent 
 import {game1Row1Selector, game2Row1Selector, game3Row1Selector, game4Row1Selector,
@@ -19,6 +19,7 @@ import {game1Row1ReducerOn,game1Row1ReducerOff,game2Row1ReducerOn,game2Row1Reduc
         from '../features/hoverSlice' //importing reducers from redux
 import {useDispatch} from "react-redux"
 import {useSelector} from "react-redux"
+import Footer from './Footer';
 
 
 
@@ -78,22 +79,22 @@ function Tournaments() {
 
             <div className="carouselContainer">
                 <Carousel className="carousel" responsive={responsive}>
+                    <div id="noScrollFreeFire"><img src="https://i.ibb.co/1LLk0d1/FreeFire.png" alt="FreeFire" border="0"/></div>
                     <div><img src="https://i.ibb.co/4VH5nGD/cod.png" alt="cod" border="0"/></div>
-                    <div><img src="https://i.ibb.co/StCZxv0/dota.png" alt="dota" border="0"/></div>
+                    <div id="noScroll"><img src="https://i.ibb.co/StCZxv0/dota.png" alt="dota" border="0"/></div>
                     <div><img src="https://i.ibb.co/MVz5F5F/FauG.png" alt="FauG" border="0"/></div>
                     <div><img src="https://i.ibb.co/DQnsJR9/Fifa-1.png" alt="Fifa-1" border="0"/></div>
                     <div><img src="https://i.ibb.co/Z2ZRPCT/Fifa.png" alt="Fifa" border="0"/></div>
                     <div><img src="https://i.ibb.co/4mhCY43/fortnite.png" alt="fortnite" border="0"/></div>
-                    <div><img src="https://i.ibb.co/1LLk0d1/FreeFire.png" alt="FreeFire" border="0"/></div>
                 </Carousel>
             </div>
 
             <div className="mainContent">
                 <div className="options">
                     <div className="options__left">
-                        <div className="button1GA">
+                        {/*<div className="button1GA">
                             <button>GA+</button>
-                        </div>
+                        </div>*/}
                         <div className="button2Free">
                             <button>FREE</button>
                         </div>
@@ -113,7 +114,27 @@ function Tournaments() {
                 <hr />
                 <div className="games">
                     <div className="flexRow"> {/*flex direction row*/} {/*Images statically stored at image bb.com for now*/}
-                        <div id="game1"
+                        
+                        <Link to="/FreeFire">
+                            <div id="game1"
+                                onMouseEnter={()=> dispatch(game2Row1ReducerOn())} 
+                                onMouseLeave={()=> dispatch(game2Row1ReducerOff())}> 
+                                    
+                                    {projectTwoIsHovered ? 
+                                        <TournamentCardHover
+                                        gameTitle="Free Fire Open" 
+                                        startDate="18 Feb 2021"
+                                        endDate="29 Feb 2021"   
+                                        numberOfGamers="20+"
+                                        prizeAmount="100,000"
+                                        imageurl="https://i.ibb.co/QmHvf1X/free-Fire1.png"                    
+                                        />  
+                                        :  <TournamentItem imageurl="https://i.ibb.co/QmHvf1X/free-Fire1.png"/>                         
+                                    }
+                            </div>{/*--------------------Freefire-------------------*/}
+                        </Link>
+
+                        <div id="game2"
                             onMouseEnter={()=> dispatch(game1Row1ReducerOn())} //Disptaches/Fires off the positive reducer and enables the selector declared at top
                             onMouseLeave={()=> dispatch(game1Row1ReducerOff())}> 
                                 
@@ -129,23 +150,6 @@ function Tournaments() {
                                     :  <TournamentItem imageurl="https://i.ibb.co/jDFpph5/cod1.png"/>                         
                                 }
                         </div>{/*-----------------COD1-----------------*/}
-
-                        <div id="game2"
-                            onMouseEnter={()=> dispatch(game2Row1ReducerOn())} 
-                            onMouseLeave={()=> dispatch(game2Row1ReducerOff())}> 
-                                
-                                {projectTwoIsHovered ? 
-                                    <TournamentCardHover
-                                    gameTitle="Free Fire Open" 
-                                    startDate=" 6 Feb 2021"
-                                    endDate="17 Feb 2021"   
-                                    numberOfGamers="9"
-                                    prizeAmount="500.00"
-                                    imageurl="https://i.ibb.co/QmHvf1X/free-Fire1.png"                    
-                                    />  
-                                    :  <TournamentItem imageurl="https://i.ibb.co/QmHvf1X/free-Fire1.png"/>                         
-                                }
-                        </div>{/*--------------------Freefire-------------------*/}
 
                         <div id="game3"
                             onMouseEnter={()=> dispatch(game3Row1ReducerOn())} 
@@ -254,7 +258,7 @@ function Tournaments() {
 
                     </div>
                     <div className="flexRow"> {/*Row 3*/}
-                                <div id="game1"
+                                <div id="game"
                                         onMouseEnter={()=> dispatch(game1Row3ReducerOn())} 
                                         onMouseLeave={()=> dispatch(game1Row3ReducerOff())}> 
                                             
@@ -394,14 +398,16 @@ function Tournaments() {
 
                     </div>
                    
-                   <div className="loadmoreButton">
+                   {/*<div className="loadmoreButton">
                             <button>Load More</button>
-                   </div>
+                                    </div>*/}
+
                 </div>
             </div>
+            <div className="footer">
+                <Footer/>
 
-            
-            
+            </div>
         </div>
     )
 }

@@ -5,6 +5,9 @@ import {useDispatch} from "react-redux"
 import {useSelector} from "react-redux"
 import { BrowserRouter as Router, Route , Switch, NavLink, Link} from 'react-router-dom'
 import Footer from './Footer'
+import FreeFire from './FreeFire'
+
+
 
 
 function Lobby() {
@@ -15,6 +18,7 @@ function Lobby() {
 
     return (
         <div className="lobby">
+            
             <div className="banner">
                 <div className="banner__left">
                     <div className="titleText">
@@ -33,7 +37,7 @@ function Lobby() {
                     </div>
                 </div>
                 <div class="figure">
-                    <div  className="imageContainer"
+                    <div  data-aos="fade-right" className="imageContainer"
                         onMouseEnter={()=> dispatch(bannerImageHoverOn())} 
                         onMouseLeave={()=> dispatch(bannerImageHoverOff())}>
                             {bannerImageHoveredSeelector ?
@@ -92,21 +96,23 @@ function Lobby() {
                                 <li><img src="https://i.ibb.co/4fgY1QV/FauG.png" alt="FauG" border="0" /></li>
                                 <Link to="/tournaments">
                                     <li id="moreTournaments"><img src="https://i.ibb.co/vvLfnHR/see-Button.png" alt="see-Button" border="0" /></li>
-
                                 </Link>
                             </ul>
                         </div>
                     </div>
 
                     <div className="playContainer">
-                        <div className="container__left">
-                            <img src="https://i.ibb.co/7v45C31/mvpofweek.png" alt="mvpofweek" border="0" />                        </div>
-                        <div className="container__right">
+                        <div data-aos="fade-right" className="container__left">
+                                <Link to="/FreeFire">
+                                    <img src="https://i.ibb.co/7v45C31/mvpofweek.png" alt="mvpofweek" border="0" />                       
+                                </Link>
+                        </div>
+                        <div  className="container__right">
                             <div className="container__rightTop">
                                 <h1>Ready to Play?</h1>
                             </div>
                             <div className="container__rightBottom">
-                                <div className="buttonCTA">
+                                <div data-aos="fade-left" className="buttonCTA">
                                     <Link to="/tournaments">
                                         <button>Sign Up Free</button>
                                     </Link>
@@ -116,12 +122,14 @@ function Lobby() {
                         </div>
                     </div>
 
-                    <div className="footer">
+                    <div className="footerLobby">
                         <Footer/>
-                        <div className="sideImage">
-                            <img src="https://i.ibb.co/KFBcVvZ/image-2.png" alt="image-2" border="0"/>         
-                        </div>
                     </div>
+                    
+                   
+                    {/*<div className="sideImage">
+                            <img src="https://i.ibb.co/KFBcVvZ/image-2.png" alt="image-2" border="0"/>         
+                            </div>*/}
         </div>
     )
 }

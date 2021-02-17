@@ -14,7 +14,7 @@
   background: linear-gradient(180deg, #132733 30%, #234156 65.11%);
   width: 100vw;
   height: 300px;
-  z-index: -1;
+  z-index: 3;
 }
 
 .flexContainer {
@@ -55,5 +55,5 @@
   z-index: 2;
   position: absolute;
   right: 0;
-  bottom: -0;
+  bottom: 0;
 }
